@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+        <!-- Single Page Header start -->
+        <div class="container-fluid page-header py-5">
+            <h1 class="text-center text-white display-6">Add Address</h1>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active text-white">Add Address</li>
+            </ol>
+        </div>
+        <!-- Single Page Header End -->
+
+
+        <!-- Checkout Page Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="p-5 bg-light rounded">
+                <h1 class="mb-4">Billing details</h1>
+
+                <div class="col-lg-15">
+                <form action="{% url 'Add_address' %}" method="post">
+                    {% csrf_token %}    
+                    <div class="row g-5">
+                        <div class="col-md-12 col-lg-6 col-xl-7">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-item w-100">
+                                        <label class="form-label my-3">First Name<sup>*</sup></label>
+                                        <input type="text" class="w-100 form-control border-1 py-2 mb-4" name="f_name">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-6">
+                                    <div class="form-item w-100">
+                                        <label class="form-label my-3">Last Name<sup>*</sup></label>
+                                        <input type="text" class="w-100 form-control border-1 py-2 mb-4" name="l_name">
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="form-item">
+                                <label class="form-label my-3">Address <sup>*</sup></label>
+                                <input type="text" class="w-100 form-control border-1 py-2 mb-4" name="address" placeholder="House Number Street Name">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label my-3">Town/City<sup>*</sup></label>
+                                <input type="text" class="w-100 form-control border-1 py-2 mb-4" name="city">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label my-3">Country<sup>*</sup></label>
+                                <input type="text" class="w-100 form-control border-1 py-2 mb-4" name="country">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label my-3">Pincode<sup>*</sup></label>
+                                <input type="text" class="w-100 form-control border-1 py-2 mb-4" name="pincode">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label my-3">Mobile<sup>*</sup></label>
+                                <input type="tel" class="w-100 form-control border-1 py-2 mb-4" name="mobile">
+                            </div>
+                            <div class="form-item">
+                                <label class="form-label my-3">Email Address<sup>*</sup></label>
+                                <input type="email" class="w-100 form-control border-1 py-2 mb-4" name="email">
+                            </div>
+
+                            
+                            <input type="submit" value="submit" class="btn btn-primary" >
+                            </div>
+                    </div>
+                </form>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Checkout Page End -->
+{% endblock %}
